@@ -6,10 +6,14 @@ pipeline {
                 echo 'checking it out from the SCM ...'
                 script{
                     try{
-                        scmCheckout(credentialsId:'79a25c15-ced7-4976-924d-e23fee5bc911',
-                                   branch:"master",
-                                   url:"https://github.com/biplavkumar/Zacton-Reusable.git"
-                                   )}catch(Exception e)
+                        checkout([
+				$class: 'GitSCM', 
+				branches: [[name: '*/master']], 
+				doGenerateSubmoduleConfigurations: false, 
+				extensions: [[$class: 'CleanCheckout']], 
+				submoduleCfg: [], 
+				userRemoteConfigs: [[credentialsId: '79a25c15-ced7-4976-924d-e23fee5bc911', url: 'https://github.com/biplavkumar/Zacton-Reusable.git']]
+			    ])}catch(Exception e)
                         {
                             echo 'Exception occured : '+e.toString()
                         }
