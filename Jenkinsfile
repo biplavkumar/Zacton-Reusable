@@ -16,8 +16,8 @@ pipeline {
                     }
                 }
             }
-        }
-      stage("build") {
+			
+			stage("build") {
             when{
                     expression{
                         BRANCH_NAME=='dev'
@@ -32,5 +32,6 @@ pipeline {
                 echo 'Testing the project .....'
             }
         }
-    }   
-
+        }
+      
+    }
