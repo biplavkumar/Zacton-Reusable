@@ -4,24 +4,13 @@ pipeline {
         stage("Checkout") {
             steps {
                 echo 'checking it out from the SCM ...'
-                script{
-                    try{
-                        checkout([
-				$class: 'GitSCM', 
-				branches: [[name: '*/master']], 
-				doGenerateSubmoduleConfigurations: false, 
-				extensions: [[$class: 'CleanCheckout']], 
-				submoduleCfg: [], 
-				userRemoteConfigs: [[credentialsId: '79a25c15-ced7-4976-924d-e23fee5bc911', url: 'https://github.com/biplavkumar/Zacton-Reusable.git']]
-			    ])}catch(Exception e)
-                        {
-                            echo 'Exception occured : '+e.toString()
-                        }
-                    }
+		    sh "rm -rf Zacton-Reusable"
+		    sh "git clone https://github.com/biplavkumar/Zacton-Reusable.git"
+                
                 }
             }
 			
-			stage("build") {
+	stage("build") {
             when{
                     expression{
                         BRANCH_NAME=='dev'
