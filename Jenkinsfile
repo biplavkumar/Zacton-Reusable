@@ -7,6 +7,11 @@ pipeline {
             }
         }
       stage("build") {
+            when{
+                    expression{
+                        BRANCH_NAME=='dev'
+                    }
+                }
             steps {
                 echo 'Building the project......'
             }
