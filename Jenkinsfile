@@ -1,9 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage("Checkout") {
+        stage("______Clean ________") {
             steps {
-                echo 'checking it out from the SCM ...'
+                echo 'cleaning in progress........'
+                sh "mvn clean"
                 }
             }
     }
