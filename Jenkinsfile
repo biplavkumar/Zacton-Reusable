@@ -4,7 +4,7 @@ pipeline {
         stage("______Clean ________") {
             steps {
                 echo 'cleaning in progress........'
-                sh "mvn clean"
+                bat "mvn clean"
                 }
             }
     }
