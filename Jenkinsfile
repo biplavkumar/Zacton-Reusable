@@ -4,9 +4,6 @@ pipeline {
         stage("Checkout") {
             steps {
                 echo 'checking it out from the SCM ...'
-		    
-		    sh "mvn clean"
-                
                 }
             }
 			
