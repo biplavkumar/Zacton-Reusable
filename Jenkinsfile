@@ -9,7 +9,7 @@ pipeline {
                         scmCheckout(credentialsId:'79a25c15-ced7-4976-924d-e23fee5bc911',
                                    branch:"master",
                                    url:"https://github.com/biplavkumar/Zacton-Reusable.git"
-                                   )catch(Exception e)
+                                   )}catch(Exception e)
                         {
                             echo 'Exception occured : '+e.toString()
                         }
