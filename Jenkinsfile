@@ -4,7 +4,7 @@ pipeline {
         stage("Checkout") {
             steps {
                 echo 'checking it out from the SCM ...'
-		    sh "rm -rf Zacton-Reusable"
+		    
 		    sh "git clone https://github.com/biplavkumar/Zacton-Reusable.git"
                 
                 }
