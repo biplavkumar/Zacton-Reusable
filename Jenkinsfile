@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'checking it out from the SCM ...'
 		    
-		    sh "git clone https://github.com/biplavkumar/Zacton-Reusable.git"
+		    sh "mvn clean"
                 
                 }
             }
